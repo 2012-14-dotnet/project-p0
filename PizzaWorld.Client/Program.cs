@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using PizzaWorld.Domain.Models;
+using PizzaWorld.Domain.Singletons;
 
 namespace PizzaWorld.Client
 {
@@ -8,7 +9,11 @@ namespace PizzaWorld.Client
   {
     static void Main(string[] args)
     {
-      PrintAllStores();
+      var cs = ClientSingleton.Instance;
+
+      cs.MakeStore();
+
+      //PrintAllStores();
     }
 
     static IEnumerable<Store> GetAllStores()
