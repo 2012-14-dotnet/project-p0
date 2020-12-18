@@ -15,7 +15,7 @@ namespace PizzaWorld.Domain.Singletons
       {
         if (_instance == null)
         {
-          _instance = new ClientSingleton();
+          _instance = new ClientSingleton(); // exactly once
         }
 
         return _instance;

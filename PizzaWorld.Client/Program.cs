@@ -9,9 +9,9 @@ namespace PizzaWorld.Client
   {
     static void Main(string[] args)
     {
-      var cs = ClientSingleton.Instance;
+      var client = ClientSingleton.Instance; // unique
 
-      cs.MakeStore();
+      client.MakeStore();
 
       //PrintAllStores();
     }
