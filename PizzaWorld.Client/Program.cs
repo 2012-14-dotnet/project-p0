@@ -7,27 +7,24 @@ namespace PizzaWorld.Client
 {
   class Program
   {
-    static void Main(string[] args)
+    private static readonly ClientSingleton _client = ClientSingleton.Instance;
+    private readonly ClientSingleton _client2;
+
+    public Program()
     {
-      var client = ClientSingleton.Instance; // unique
-
-      client.MakeStore();
-
-      //PrintAllStores();
+      _client2 = ClientSingleton.Instance;
     }
 
-    static IEnumerable<Store> GetAllStores()
+    static void Main(string[] args)
     {
-      return new List<Store>()
-      {
-        new Store(),
-        new Store()
-      };
+      _client.MakeStore();
+
+      PrintAllStores();
     }
 
     static void PrintAllStores()
     {
-      foreach (var store in GetAllStores())
+      foreach (var store in _client.Stores)
       {
         System.Console.WriteLine(store);
       }
