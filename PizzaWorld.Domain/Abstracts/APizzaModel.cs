@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace PizzaWorld.Domain.Abstracts
 {
-  public class APizzaModel
+  public abstract class APizzaModel
   {
     public string Crust { get; set; }
     public string Size { get; set; }

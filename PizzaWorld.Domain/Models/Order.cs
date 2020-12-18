@@ -10,6 +10,11 @@ namespace PizzaWorld.Domain.Models
 
     public List<APizzaModel> Pizzas { get; set; }
 
+    public Order()
+    {
+      Pizzas = new List<APizzaModel>();
+    }
+
     public void MakeMeatPizza()
     {
       Pizzas.Add(_pizzaFactory.Make<MeatPizza>());

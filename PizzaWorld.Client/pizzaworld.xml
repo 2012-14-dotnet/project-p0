@@ -6,5 +6,8 @@
   <Store>
     <Orders />
   </Store>
+  <Store>
+    <Orders />
+  </Store>
   <Store />
 </ArrayOfStore>
