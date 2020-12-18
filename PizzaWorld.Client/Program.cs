@@ -38,6 +38,7 @@ namespace PizzaWorld.Client
       user.SelectedStore = _client.SelectStore();
       user.SelectedStore.CreateOrder();
       user.Orders.Add(user.SelectedStore.Orders.Last());
+      // while user.SelectPizza()
       user.Orders.Last().MakeMeatPizza();
       user.Orders.Last().MakeMeatPizza();
 
