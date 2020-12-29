@@ -44,12 +44,13 @@ namespace PizzaWorld.Client
 
       PrintAllStoresWithEF();
 
-      user.SelectedStore = _client.SelectStore();
+      user.SelectedStore = _sql.SelectStore(); // lazy loading
       user.SelectedStore.CreateOrder();
-      user.Orders.Add(user.SelectedStore.Orders.Last());
+      user.Orders.Add(user.SelectedStore.Orders.Last()); // eager loading
       // while user.SelectPizza()
       user.Orders.Last().MakeMeatPizza();
       user.Orders.Last().MakeMeatPizza();
+      _sql.Update();
 
       System.Console.WriteLine(user);
     }

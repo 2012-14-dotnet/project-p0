@@ -5,9 +5,10 @@ namespace PizzaWorld.Domain.Models
 {
   public class MeatPizza : APizzaModel
   {
-    protected override void AddCrust()
+    private PizzaWorldContext _db = new PizzaWorldContext();
+    protected override void AddCrust(Crust crust)
     {
-      Crust = "regular";
+      Crust = crust;
     }
 
     protected override void AddSize()
